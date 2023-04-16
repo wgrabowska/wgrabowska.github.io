@@ -1,0 +1,165 @@
+html
+{scroll-behavior: smooth;}
+
+body 
+{background: rgb(245, 240, 235);
+margin:0;}
+
+header 
+{background: black;
+color:rgb(255, 255, 255);
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+position:sticky;
+top:0}
+
+.MainPageLink
+{display: flex;
+text-decoration: none;}
+
+h1
+{margin:0;
+font-family: 'Shadows Into Light', cursive;
+font-size: 2rem;
+color:rgb(255, 255, 255);}
+
+h3
+{font-family: 'Shadows Into Light', cursive;
+margin-bottom: 0;}
+
+h4
+{font-family: 'Shadows Into Light', cursive;}
+
+label
+{font-family: 'Shadows Into Light', cursive;}
+
+h2
+{font-family: 'Satisfy', cursive;}
+
+.NavUl
+{display:flex;
+list-style: none;
+margin: 0;
+padding: 0;
+font-family: 'Shadows Into Light', cursive;}
+
+a
+{text-decoration: none;
+color:rgb(255, 255, 255);}
+
+
+li
+{margin-left: 20px;}
+
+main
+{display:flex;
+max-width: 1200px;
+margin:auto;
+padding: 0 1rem}
+
+article
+{flex:1;}
+
+section
+{flex:3;}
+
+picture
+{display: flex;
+justify-content: center;}
+
+img
+{max-width: 80%;
+padding-top: 15px;}
+
+footer
+{background: rgb(0, 0, 0);
+color:rgb(255, 255, 255);
+padding:0 1rem;
+overflow: auto;}
+
+footer p
+{text-align: end;
+font-size: .8rem;
+font-family: 'Shadows Into Light', cursive;}
+
+footer ul
+{list-style: none;
+padding:0;
+font-family: 'Shadows Into Light', cursive;}
+
+footer li
+{margin: 0;
+line-height: 1.5rem;}
+
+footer a
+{color:rgb(255, 255, 255);
+text-decoration: none;}
+
+#toggler,
+label
+{display: none;}
+
+p
+{margin-top: 0;}
+
+/* style dla urządzeń mobilnych */
+@media (max-width:768px)
+    {.NavUl
+        {position:absolute;
+        right: 0;
+        top:100%;
+        /* daliśmy tutaj top:100%, bo procenty odnoszą 
+        się do rodzica, którym w tym przypadku jest header, więc
+        jak damy top:100% to będzie pod headerem*/
+        flex-direction: column;
+        background-color: black;
+        line-height: 2rem;
+        padding: 1.5rem 1.5rem 1.5rem 0.5rem;
+        font-family: 'Shadows Into Light', cursive;
+        pointer-events: none;
+        opacity: 0;
+        transition: .25s;
+    }
+
+    #toggler:checked ~ .NavUl 
+        {pointer-events: all;
+        opacity:1;}
+/* jeżeli toggler jest check to wpływa (~) na NavUl */
+
+    label 
+        {display: flex;
+        height: 2rem;
+        width: 2rem;
+        position: relative;}
+
+    label div
+        {width: 80%;
+        height: 10%;
+        left: 10%;
+        background: white;
+        position: absolute;
+        transition: 0.25s;}
+
+    .l1 {top:17.5%}
+    .l2 {top:45%}
+    .l3 {top:72.5%}
+
+    #toggler:checked ~ label .l1
+        {transform: rotate(45deg);
+        top: 45%;}
+
+    #toggler:checked ~ label .l2
+        {transform: rotate(-45deg);}
+    
+    #toggler:checked ~ label .l3
+        {transform: rotate(45deg);
+        top: 45%;}
+    
+    main
+        {flex-direction: column;}
+
+    img
+        {max-width: 60%;}
+}
